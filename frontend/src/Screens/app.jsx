@@ -22,7 +22,7 @@ function app() {
 
   const resetSongPool = async () => {
     try {
-      const response = await axios.post("http://127.0.0.1:8080/api/reset");
+      const response = await axios.post("https://vercel.com/jakerances-projects/rankify-back/27KHiAy2YEEdVMhgdhW1Ls3jXfz6/api/reset");
       console.log(response.data.message);
     } catch (error) {
       console.error('Error resetting song pool:', error);
@@ -47,7 +47,7 @@ function app() {
     try {
       //Reset song_pool so past rounds don't carry over
       resetSongPool()
-      const response = await axios.post("http://127.0.0.1:8080/api/pairs", objectsList);
+      const response = await axios.post("https://vercel.com/jakerances-projects/rankify-back/27KHiAy2YEEdVMhgdhW1Ls3jXfz6/api/pairs", objectsList);
       setData(response.data);
     } catch (error) {
         console.error('Error fetching data:', error);
@@ -56,7 +56,7 @@ function app() {
 
 const sendResults = async () => {
   try {
-      const response = await axios.post("http://127.0.0.1:8080/api/results", data);
+      const response = await axios.post("https://vercel.com/jakerances-projects/rankify-back/27KHiAy2YEEdVMhgdhW1Ls3jXfz6/api/results", data);
       setSongs(response.data.processedData);
   } catch (error) {
       console.error('Error fetching data:', error);
