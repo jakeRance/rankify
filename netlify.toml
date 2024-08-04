@@ -1,6 +1,6 @@
 [build]
   base = "frontend"          # Base directory for the build command
-  publish = "frontend/dist" # Directory to publish
+  publish = "dist" # Directory to publish
   command = "npm run build"  # Build command
 
 [[redirects]]
