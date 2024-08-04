@@ -5,7 +5,6 @@ import Compare from './compare.jsx';
 import Results from './results.jsx';
 import Songs from './songs.jsx'
 import axios from 'axios';
-// import {resetSongPool} from '../Components/resetSongPool.jsx'
 
 
 
@@ -22,7 +21,7 @@ function app() {
 
   const resetSongPool = async () => {
     try {
-      const response = await axios.post("https://vercel.com/jakerances-projects/rankify-back/DkiWxxadhhF8w7aXdjAh2Pga4rLB/api/reset");
+      const response = await axios.post("${process.env.REACT_APP_API_URL}/api/reset");
       console.log(response.data.message);
     } catch (error) {
       console.error('Error resetting song pool:', error);
@@ -47,7 +46,7 @@ function app() {
     try {
       //Reset song_pool so past rounds don't carry over
       resetSongPool()
-      const response = await axios.post("https://vercel.com/jakerances-projects/rankify-back/DkiWxxadhhF8w7aXdjAh2Pga4rLB/api/pairs", objectsList);
+      const response = await axios.post("${process.env.REACT_APP_API_URL}/api/pairs", objectsList);
       setData(response.data);
     } catch (error) {
         console.error('Error fetching data:', error);
@@ -56,7 +55,7 @@ function app() {
 
 const sendResults = async () => {
   try {
-      const response = await axios.post("https://vercel.com/jakerances-projects/rankify-back/DkiWxxadhhF8w7aXdjAh2Pga4rLB/api/results", data);
+      const response = await axios.post("${process.env.REACT_APP_API_URL}/api/results", data);
       setSongs(response.data.processedData);
   } catch (error) {
       console.error('Error fetching data:', error);
