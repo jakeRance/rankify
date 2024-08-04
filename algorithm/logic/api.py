@@ -12,7 +12,7 @@ from song_pool import song_pool
 # Flask constructor takes the name of 
 # current module (__name__) as argument.
 app = Flask(__name__)
-cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+cors = CORS(app, resources={r"/api/*": {"origins": "https://rankify-coral.vercel.app/"}})
 
 
 # The route() function of the Flask class is a decorator, 

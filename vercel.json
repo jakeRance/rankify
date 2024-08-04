@@ -1,22 +1,15 @@
 {
-    "projects": [
+    "version": 2,
+    "builds": [
       {
-        "name": "frontend",
-        "src": "frontend/",
-        "buildCommand": "npm run build",
-        "outputDirectory": "frontend/build",
-        "framework": "create-react-app"
-      },
+        "src": "index.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
       {
-        "name": "backend",
-        "src": "algorithm/",
-        "buildCommand": "pip install -r requirements.txt",
-        "outputDirectory": "backend",
-        "functions": {
-          "api/*.py": {
-            "runtime": "python3.9"
-          }
-        }
+        "src": "/(.*)",
+        "dest": "index.js"
       }
     ]
   }
