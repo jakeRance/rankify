@@ -44,7 +44,7 @@ def reset_song_pool():
     song_pool.clear()
     return jsonify({'message': 'Song pool has been reset'}), 200
 
-@app.route('/hellow', methods=['POST'])
+@app.route('/api/hello', methods=['POST'])
 def hello_world():
     return jsonify({'Hello, World!'})
 
