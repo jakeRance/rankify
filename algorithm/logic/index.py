@@ -44,6 +44,10 @@ def reset_song_pool():
     song_pool.clear()
     return jsonify({'message': 'Song pool has been reset'}), 200
 
+@app.route('/hellow', methods=['POST'])
+def hello_world():
+    return jsonify({'Hello, World!'})
+
 # main driver function
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
