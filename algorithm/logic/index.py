@@ -1,10 +1,7 @@
-# Importing flask module in the project is mandatory
-# An object of Flask class is our WSGI application.
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from initialize_algo import initialize_algorithm
 from comparison import Comparison
-from song import Song
 from create_range import create_range
 from song_pool import song_pool
 
@@ -49,4 +46,4 @@ def reset_song_pool():
 
 # main driver function
 if __name__ == '__main__':
-    app.run(debug=True, port=8080)
+    app.run(host='0.0.0.0')

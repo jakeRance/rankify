@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import {compare} from './compare'
-// import {results} from './results'
 import Compare from './compare.jsx';
 import Results from './results.jsx';
 import Songs from './songs.jsx'
@@ -10,8 +8,6 @@ import axios from 'axios';
 
 
 function app() { 
-  const [songA, setSongA] = useState("")
-  const [songB, setSongB] = useState("")
   const [data, setData] = useState([])
   const [songs, setSongs] = useState([])
   const [count, setCount] = useState(0)
