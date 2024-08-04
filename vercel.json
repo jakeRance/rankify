@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
       {
-        "src": "algorithm/logic/index.js",
+        "src": "algorithm/logic/index.py",
         "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "algorithm/logic/index.js"
+        "dest": "algorithm/logic/index.py"
       }
     ]
   }
