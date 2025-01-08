@@ -1,7 +1,10 @@
+# Importing flask module in the project is mandatory
+# An object of Flask class is our WSGI application.
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from initialize_algo import initialize_algorithm
 from comparison import Comparison
+from song import Song
 from create_range import create_range
 from song_pool import song_pool
 
@@ -9,7 +12,7 @@ from song_pool import song_pool
 # Flask constructor takes the name of 
 # current module (__name__) as argument.
 app = Flask(__name__)
-cors = CORS(app, resources={r"/api/*": {"origins": "https://rankify-coral.vercel.app/"}})
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 
 # The route() function of the Flask class is a decorator, 
@@ -44,10 +47,6 @@ def reset_song_pool():
     song_pool.clear()
     return jsonify({'message': 'Song pool has been reset'}), 200
 
-@app.route('/api/hello', methods=['POST'])
-def hello_world():
-    return jsonify({'Hello, World!'})
-
 # main driver function
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(debug=True, port=8080)
